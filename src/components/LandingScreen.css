@@ -1,0 +1,151 @@
+.landing-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(165deg, #0f0a23 0%, #1a0f3d 35%, #150c2e 50%, #1a0f3d 70%, #0d0820 100%);
+  background-size: 120% 120%;
+  background-position: 50% 50%;
+  animation: landing-bg-pan 18s ease-in-out infinite;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes landing-bg-pan {
+  0%, 100% { background-position: 50% 50%; }
+  50% { background-position: 55% 55%; }
+}
+
+.fireworks-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.landing-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 1.5rem;
+  max-width: 90vw;
+}
+
+.eid-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(2rem, 10vw, 3.5rem);
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.eid-title-bits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em 0.35em;
+  justify-content: center;
+}
+
+.eid-word {
+  display: inline-block;
+}
+
+.eid-subtitle {
+  font-size: clamp(0.9rem, 4vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 2rem;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: subtitle-float 6s ease-in-out infinite;
+}
+
+@keyframes subtitle-float {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-6px); opacity: 0.95; }
+}
+
+.gift-button-wrap {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+/* Flower border around button: flowers sit on the edge of the button */
+.gift-button-wrap-flower-border {
+  padding: 0.6rem;
+}
+
+.gift-button-wrap .flower {
+  position: absolute;
+  font-size: clamp(1rem, 4.5vw, 1.4rem);
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  animation: flower-float 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.gift-button-wrap .flower-tl  { top: -0.1rem;   left: 0.1rem;   animation-delay: 0s; }
+.gift-button-wrap .flower-tc  { top: -0.3rem;   left: 50%; transform: translateX(-50%); animation-delay: 0.2s; }
+.gift-button-wrap .flower-tr  {     top: -0.3rem;
+  right: 3.5rem;  animation-delay: 0.4s; }
+.gift-button-wrap .flower-tr2 { bottom: -0.3rem;
+  right: 3.5rem;  animation-delay: 0.1s; }
+.gift-button-wrap .flower-bl  { bottom: -0.2rem; left: 0.1rem;   animation-delay: 0.2s; }
+.gift-button-wrap .flower-bc  { bottom: 1.1rem;
+  left: -0.3rem; transform: translateX(-50%); animation-delay: 0.5s; }
+.gift-button-wrap .flower-br  { top: -0.1rem;   right: 0.1rem;  animation-delay: 0.3s; }
+.gift-button-wrap .flower-br2 { bottom: -0.5rem;   left: 50%;  animation-delay: 0.6s; }
+.gift-button-wrap .flower-left   {     top: 0.9rem;
+  left: 3.5rem; margin-top: 0; transform: translateY(-50%); animation: flower-float-side 3s ease-in-out 0.1s infinite; }
+.gift-button-wrap .flower-left2  { bottom: -0.3rem;
+  left: 3.5rem; animation: flower-float 3s ease-in-out 0.4s infinite; }
+.gift-button-wrap .flower-right  { bottom: -1.2rem; right: 0.1rem; margin-top: 0; transform: translateY(-50%); animation: flower-float-side 3s ease-in-out 0.3s infinite; }
+.gift-button-wrap .flower-right2 { right: -0.3rem;  top: 30%; animation: flower-float 3s ease-in-out 0.6s infinite; }
+
+@keyframes flower-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.05); }
+}
+
+@keyframes flower-float-side {
+  0%, 100% { transform: translateY(-50%) scale(1); }
+  50% { transform: translateY(calc(-50% - 5px)) scale(1.05); }
+}
+
+.gift-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1rem 1.75rem;
+  border: none;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #7b2cbf 0%, #5a189a 100%);
+  color: #fff;
+  font-size: clamp(0.85rem, 3.5vw, 1rem);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(123, 44, 191, 0.4);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.gift-button:hover {
+  box-shadow: 0 12px 32px rgba(255, 215, 0, 0.3);
+}
+
+.gift-button-followers {
+  font-size: 0.75em;
+  opacity: 0.9;
+}
+
+.gift-button-text {
+  font-size: 1em;
+}
